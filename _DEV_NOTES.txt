@@ -1,0 +1,21 @@
+
+laravel new ninja_network
+
+npm run dev
+
+php artisan make:model Ninja -mfs
+php artisan make:controller NinjaController
+
+php artisan migrate
+php artisan migrate:rollback
+php artisan migrate:fresh --seed
+
+
+
+------------
+1. "php artisan make:model Ninja -mfs"
+2. in migrations file: add additional fields
+3. in model: add the "fillable" array
+4. in factory: define the defaults for the (using fake()->...)
+5. in seeder: specify how much we want to create
+6. in DatabaseSeeder.php: add a call the new seeder file

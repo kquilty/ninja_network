@@ -8,7 +8,7 @@ use App\Models\Ninja;
 class NinjaController extends Controller
 {
     public function index() {
-        $ninjas = Ninja::orderBy('created_at', 'desc')->paginate(5);
+        $ninjas = Ninja::orderBy('created_at', 'desc')->paginate(10); //10 per page
         return view('ninjas.index', ['ninjas' => $ninjas]);
     }
 

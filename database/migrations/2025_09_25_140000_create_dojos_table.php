@@ -11,16 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ninjas', function (Blueprint $table) {
+        Schema::create('dojos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->integer('age');
-            $table->integer('skill');
-            $table->text('bio');
-            $table->foreignId('dojo_id')//<---- "magic" naming convention
-                ->constrained()//<--- "ID must be a valid record"
-                ->onDelete('cascade');//<--- if the dojo is deleted, delete its ninjas too
+            $table->string('location');
+            $table->text('description');
         });
     }
 
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ninjas');
+        Schema::dropIfExists('dojos');
     }
 };
