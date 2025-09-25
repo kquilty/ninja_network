@@ -13,8 +13,8 @@
     <header>
         <nav>
             <a href="/">Home</a>
-            <a href="/ninjas">All Ninjas</a>
-            <a href="/ninjas/create">Create Ninja</a>
+            <a href="{{ route('ninjas.index') }}">All Ninjas</a>
+            <a href="{{ route('ninjas.create') }}">Create Ninja</a>
         </nav> 
     </header>
 
