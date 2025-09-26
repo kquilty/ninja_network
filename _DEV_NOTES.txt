@@ -1,3 +1,7 @@
+additional installs...
+    npm install -g sass
+            ...then: sass --watch ./resources/css/scss_input.scss:./resources/css_compiled/scss_output.css
+
 
 laravel new ninja_network
 
