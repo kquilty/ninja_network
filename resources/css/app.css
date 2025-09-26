@@ -64,8 +64,14 @@ input, select, textarea {
 .container {
   @apply max-w-screen-lg mx-auto px-12 py-8;
 }
+.card:hover {
+  @apply shadow-lg;
+}
 .card {
   @apply bg-white rounded border border-gray-200 px-3 py-3 my-2 flex justify-between items-center;
+
+  /* Animation: zoom on hover */
+  @apply ease-in-out transform hover:scale-110 transition duration-100;
 }
 .highlight {
   @apply border-l-4 border-l-red-500;
