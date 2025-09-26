@@ -3,8 +3,8 @@
 
 <div 
     @class([
-        'card',
-        'highlight' => $highlight
+        'ninja-list-card',
+        'ninja-list-card-highlight' => $highlight
     ])
 >
     {{ $slot }}

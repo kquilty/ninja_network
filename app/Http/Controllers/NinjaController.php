@@ -15,15 +15,15 @@ class NinjaController extends Controller
         return view('ninjas.index', ['ninjas' => $ninjas, 'totalNinjas' => $totalNinjas]);
     }
 
-    public function create() {
-        return view('ninjas.create');
+    public function getCreateView() {
+        return view('ninjas.create-new-view');
     }
 
-    public function show($id) {
+    public function getProfileView($id) {
 
         $ninja = Ninja::with('dojo')// eager load the dojo as well (since we know we'll be using it)
             ->findOrFail($id);//show 404 if not found
 
-        return view('ninjas.show', ['ninja' => $ninja]);
+        return view('ninjas.profile-view', ['ninja' => $ninja]);
     }
 }

@@ -1,0 +1,24 @@
+//
+// To Compile:
+//      sass --watch ./resources/css/scss_input:./resources/css/scss_output
+//
+
+@mixin nunito-font($font-weight: 400) {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $font-weight; /* a value from 200 to 1000  x */
+  font-style: normal;
+}
+
+// Basics (to be extended)
+%main-font-normal {
+  @include nunito-font(400);
+}
+%main-font-bold {
+  @include nunito-font(800);
+}
+
+// Specifics
+body {
+  @extend %main-font-normal;
+}

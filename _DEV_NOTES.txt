@@ -1,11 +1,11 @@
 additional installs...
     npm install -g sass
-            ...then: sass --watch ./resources/css/scss_input.scss:./resources/css_compiled/scss_output.css
 
 
 laravel new ninja_network
 
 npm run dev
+sass --watch ./resources/css/scss_input:./resources/css/scss_output
 
 php artisan make:model Ninja -mfs
 php artisan make:controller NinjaController

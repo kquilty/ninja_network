@@ -1,4 +1,5 @@
-<x-layout>
+<x-main-layout-component>
+
     <h1>{{ $ninja->name }}, {{ $ninja->age }}</h1>
 
     <div class="p-4 bg-white rounded shadow-md mt-4">
@@ -13,4 +14,4 @@
 
     <a href="/ninjas" class="btn mt-4 inline-block">Back to Ninjas</a>
 
-</x-layout>
+</x-main-layout-component>
