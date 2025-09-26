@@ -11,4 +11,8 @@ class Ninja extends Model //<--- automatically looks for the plural 'ninjas' tab
 
     /** @use HasFactory<\Database\Factories\NinjaFactory> */
     use HasFactory;
+
+    public function dojo() {
+        return $this->belongsTo(Dojo::class); //each ninja belongs to one dojo
+    }
 }

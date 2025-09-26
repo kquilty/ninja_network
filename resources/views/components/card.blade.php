@@ -4,7 +4,7 @@
 <div 
     @class([
         'card',
-        'highlight-card' => $highlight
+        'highlight' => $highlight
     ])
 >
     {{ $slot }}
