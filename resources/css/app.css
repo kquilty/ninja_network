@@ -65,7 +65,15 @@ input, select, textarea {
   @apply shadow-lg;
 }
 .ninja-list-card {
-  @apply bg-white rounded border border-gray-200 px-3 py-3 my-2 flex justify-between items-center;
+    @apply 
+    bg-white rounded 
+    border border-gray-200 
+    px-3 
+    py-3 
+    my-2 
+    flex justify-between items-center
+    cursor-pointer;
+
 
   /* Animation: zoom on hover */
   @apply ease-in-out transform hover:scale-102 transition duration-100;

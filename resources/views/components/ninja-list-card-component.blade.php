@@ -6,6 +6,7 @@
         'ninja-list-card',
         'ninja-list-card-highlight' => $highlight
     ])
+    onclick="location.href='{{ $attributes->get('href') }}'"
 >
     {{ $slot }}
 
