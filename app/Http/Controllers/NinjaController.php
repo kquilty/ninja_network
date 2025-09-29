@@ -48,7 +48,7 @@ class NinjaController extends Controller
 
         return redirect()
             ->route('ninjas.index')
-            //->with('success', 'Ninja deleted successfully!')
+            ->with('success', 'Ninja deleted successfully!')
             ;
     }
 
@@ -85,8 +85,7 @@ class NinjaController extends Controller
         Ninja::create($validated_col_val_map);
 
         return redirect()
-            ->route('ninjas.index');
-            // ->route('ninjas.profile', ['id' => $ninja->id])
-            // ->with('success', 'Ninja created successfully!'); //flash message
+            ->route('ninjas.index')
+            ->with('success', 'Ninja created successfully!'); //flash message
     }
 }

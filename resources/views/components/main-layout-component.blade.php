@@ -16,6 +16,12 @@
 </head>
 <body>
 
+    @if($condition = session('success'))
+        <div class="p-4 bg-green-100 text-green-700 rounded text-center font-bold">
+            {{ $condition }}
+        </div>
+    @endif
+
     <header>
         <nav>
             <h1>Ninja Network</h1>
