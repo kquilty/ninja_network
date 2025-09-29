@@ -13,6 +13,8 @@ Route::get('/', function () {
     //     return view('ninjas.create');
     // });
 
-Route::get('/ninjas', [NinjaController::class, 'index'])->name('ninjas.index');
-Route::get('/ninjas/create', [NinjaController::class, 'getCreateView'])->name('ninjas.create');
-Route::get('/ninjas/{id}', [NinjaController::class, 'getProfileView'])->name('ninjas.profile');
+Route::get('/ninjas',           [NinjaController::class, 'index'])->name('ninjas.index');
+Route::get('/ninjas/create',    [NinjaController::class, 'getCreateView'])->name('ninjas.create');
+Route::get('/ninjas/{id}',      [NinjaController::class, 'getProfileView'])->name('ninjas.profile');
+
+Route::post('/ninjas',          [NinjaController::class, 'createNewNinja'])->name('ninjas.createNewNinja');
