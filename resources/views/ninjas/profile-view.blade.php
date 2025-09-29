@@ -17,7 +17,7 @@
         <a href="/ninjas" class="btn">Back to Ninjas</a>
 
         <form 
-            action="{{ route('ninjas.deleteNinja', ['id' => $ninja->id]) }}" 
+            action="{{ route('ninjas.deleteNinja', ['ninja' => $ninja]) }}" 
             method="POST" 
             onsubmit="return confirm('Are you sure you want to delete this ninja?');"
         >

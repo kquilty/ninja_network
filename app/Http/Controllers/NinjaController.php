@@ -19,7 +19,7 @@ class NinjaController extends Controller
 
         return view('ninjas.index', [
             'ninjas' => $ninjas,
-            'totalNinjas' => Ninja::count()+1
+            'totalNinjas' => Ninja::count()
         ]);
     }
 
@@ -31,10 +31,12 @@ class NinjaController extends Controller
         );
     }
 
-    public function getProfileView($id) {
+    public function getProfileView(Ninja $ninja) {
 
-        $ninja = Ninja::with('dojo')// eager load the dojo as well (since we know we'll be using it)
-            ->findOrFail($id);//show 404 if not found
+        // $ninja = Ninja::with('dojo')// eager load the dojo as well (since we know we'll be using it)
+            // ->findOrFail($id);//show 404 if not found
+
+        $ninja->load('dojo'); // eager load the dojo as well (since we know we'll be using it)
 
         return view(
                 'ninjas.profile-view', //---- display this view
@@ -42,8 +44,7 @@ class NinjaController extends Controller
             );
     }
 
-    public function deleteNinja($id) {
-        $ninja = Ninja::findOrFail($id);
+    public function deleteNinja(Ninja $ninja) {
         $ninja->delete();
 
         return redirect()
