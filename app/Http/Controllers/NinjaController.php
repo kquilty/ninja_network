@@ -42,6 +42,16 @@ class NinjaController extends Controller
             );
     }
 
+    public function deleteNinja($id) {
+        $ninja = Ninja::findOrFail($id);
+        $ninja->delete();
+
+        return redirect()
+            ->route('ninjas.index')
+            //->with('success', 'Ninja deleted successfully!')
+            ;
+    }
+
     public function createNewNinja(Request $request) {
         /*
         //validate the data
@@ -63,7 +73,7 @@ class NinjaController extends Controller
                 ->withInput();
         }
         */
-        
+
         $validated_col_val_map = $request->validate([
             'name' => 'required|max:255',
             'age' => 'required|integer|max:130|min:18',

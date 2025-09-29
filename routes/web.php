@@ -18,3 +18,5 @@ Route::get('/ninjas/create',    [NinjaController::class, 'getCreateView'])->name
 Route::get('/ninjas/{id}',      [NinjaController::class, 'getProfileView'])->name('ninjas.profile');
 
 Route::post('/ninjas',          [NinjaController::class, 'createNewNinja'])->name('ninjas.createNewNinja');
+
+Route::delete('/ninjas/{id}',      [NinjaController::class, 'deleteNinja'])->name('ninjas.deleteNinja');

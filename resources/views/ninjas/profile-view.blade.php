@@ -13,6 +13,26 @@
         <p><strong>Description:</strong> {{ $ninja->dojo->description }}</p>
     </div>
 
-    <a href="/ninjas" class="btn mt-4 inline-block">Back to Ninjas</a>
+    <div class="mt-4" style="display: flex; justify-content: space-between;">
+        <a href="/ninjas" class="btn">Back to Ninjas</a>
+
+        <form 
+            action="{{ route('ninjas.deleteNinja', ['id' => $ninja->id]) }}" 
+            method="POST" 
+            onsubmit="return confirm('Are you sure you want to delete this ninja?');"
+        >
+            @csrf
+
+            {{-- Since HTML forms do not support DELETE method natively... --}}
+            @method('DELETE')
+
+            <button 
+                type="submit" 
+                class="btn btn-danger"
+            >
+                Delete Ninja
+            </button>
+        </form>
+    </div>
 
 </x-main-layout-component>
