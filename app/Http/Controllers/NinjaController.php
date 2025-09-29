@@ -43,6 +43,7 @@ class NinjaController extends Controller
     }
 
     public function createNewNinja(Request $request) {
+        /*
         //validate the data
         try {
             $validated_col_val_map = $request->validate([
@@ -56,11 +57,22 @@ class NinjaController extends Controller
             Ninja::create($validated_col_val_map);
 
         } catch (\Illuminate\Validation\ValidationException $e) {
-            // return redirect()
-            //     ->back()
-            //     ->withErrors($e->validator)
-            //     ->withInput();
+            return redirect()
+                ->back()
+                ->withErrors($e->validator)
+                ->withInput();
         }
+        */
+        
+        $validated_col_val_map = $request->validate([
+            'name' => 'required|max:255',
+            'age' => 'required|integer|max:130|min:18',
+            'skill' => 'required|integer|max:100|min:0',
+            'bio' => 'required|max:1000',
+            'dojo_id' => 'required|exists:dojos,id'
+        ]);
+        
+        Ninja::create($validated_col_val_map);
 
         return redirect()
             ->route('ninjas.index');

@@ -6,11 +6,24 @@
     >
         @csrf <!-- weird security thing on every form. just do it. -->
         
+
+        @if($errors->any())
+            <div class="mt-4 mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+                <ul style="margin-block: 0;">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+
         <label for="name">Name:</label>
         <input 
             type="text" 
             id="name" 
             name="name" 
+            value="{{ old('name') }}"
             required 
             class="border border-gray-300 rounded px-2 py-1 mb-4 w bg-white"
         />
@@ -29,6 +42,7 @@
             type="number" 
             id="skill" 
             name="skill" 
+            value="{{ old('skill') }}"
             required 
             class="border border-gray-300 rounded px-2 py-1 mb-4 w bg-white"
         />
@@ -39,18 +53,21 @@
             name="bio" 
             rows="4" 
             class="border border-gray-300 rounded px-2 py-1 mb-4 w bg-white"
-        ></textarea>
+        >{{ old('bio') }}</textarea>
 
         <label for="name">Dojo:</label>
         <select 
             id="dojo_id" 
-            name="dojo_id" 
+            name="dojo_id"
             required 
             class="border border-gray-300 rounded px-2 py-1 mb-4 w bg-white"
         >
             <option value="">Select a Dojo</option
             @foreach ($dojos as $dojo)
-                <option value="{{ $dojo->id }}">{{ $dojo->name }}</option>
+                <option 
+                    value="{{ $dojo->id }}"
+                    {{ old('dojo_id') == $dojo->id ? 'selected' : '' }}
+                >{{ $dojo->name }}</option>
             @endforeach
         </select>
 
