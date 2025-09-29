@@ -41,6 +41,16 @@ header {
 
   nav {
     @apply flex items-center gap-5 max-w-screen-lg px-12 py-4 mx-auto;
+
+    a {
+        @apply 
+            border-b-2 
+            border-white 
+            hover:border-red-500 
+            text-gray-700 
+            hover:text-red-500 
+            transition;
+    }
   }
   h1 {
     @apply mr-auto;
@@ -66,13 +76,13 @@ input, select, textarea {
 }
 .ninja-list-card {
     @apply 
-    bg-white rounded 
-    border border-gray-200 
-    px-3 
-    py-3 
-    my-2 
-    flex justify-between items-center
-    cursor-pointer;
+        bg-white rounded 
+        border border-gray-200 
+        px-3 
+        py-3 
+        my-2 
+        flex justify-between items-center
+        cursor-pointer;
 
 
   /* Animation: zoom on hover */

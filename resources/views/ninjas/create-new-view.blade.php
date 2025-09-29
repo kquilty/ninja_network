@@ -33,6 +33,7 @@
             type="number" 
             id="age" 
             name="age" 
+            value="{{ old('age') }}"
             required 
             class="border border-gray-300 rounded px-2 py-1 mb-4 w bg-white"
         />
